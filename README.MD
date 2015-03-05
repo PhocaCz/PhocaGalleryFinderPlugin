@@ -1,0 +1,1 @@
+Phoca Gallery FinderPlugin is Joomla! CMS extension. Plugin which adds finder information of images in search results.
