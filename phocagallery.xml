@@ -1,22 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<extension version="3" type="plugin" group="finder" method="upgrade">
+<extension type="plugin" group="finder" method="upgrade" version="3">
 	<name>plg_finder_phocagallery</name>
-	<author>Jan Pavelka</author>
-	<creationDate>27/08/2013</creationDate>
+	<author>Jan Pavelka (www.phoca.cz)</author>
+	<creationDate>27/01/2019</creationDate>
+	<authorEmail></authorEmail>
+	<authorUrl>https://www.phoca.cz</authorUrl>
 	<copyright>Jan Pavelka</copyright>
 	<license>GNU/GPL</license>
-	<authorEmail></authorEmail>
-	<authorUrl>www.phoca.cz</authorUrl>
-	<version>4.0.2</version>
+	<version>4.3.11</version>
 	<description>PLG_FINDER_PHOCAGALLERY_DESCRIPTION</description>
+	<projectName>PhocaGalleryFinderPlugin</projectName>
+
 	<files>
-		<file plugin="phocagallery">phocagallery.php</file>
-    	<filename>index.html</filename>
+		<filename plugin="phocagallery">index.html</filename>
+		<filename plugin="phocagallery">phocagallery.php</filename>
 	</files>
+
 	<languages>
 		<language tag="en-GB">language/en-GB/en-GB.plg_finder_phocagallery.ini</language>
 		<language tag="en-GB">language/en-GB/en-GB.plg_finder_phocagallery.sys.ini</language>
 	</languages>
+
+	<administration>
+		<languages>
+			<language tag="en-GB">language/en-GB/en-GB.plg_finder_phocagallery.ini</language>
+			<language tag="en-GB">language/en-GB/en-GB.plg_finder_phocagallery.sys.ini</language>
+		</languages>
+	</administration>
 	
 	<config>
 	<fields name="params">
@@ -28,4 +38,8 @@
 		</fieldset>
 	</fields>
 	</config>
+
+	<updateservers>
+		<server type="extension" name="PLG_FINDER_PHOCAGALLERY"><![CDATA[https://raw.githubusercontent.com/PhocaCz/PhocaGalleryFinderPlugin/master/manifest.xml]]></server>
+	</updateservers>
 </extension>
