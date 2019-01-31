@@ -2,7 +2,7 @@
 	<update>
 		<name><![CDATA[ Phoca Gallery Finder Plugin ]]></name>
 		<description><![CDATA[ Phoca Gallery Finder plugin is a Joomla! plugin which allows you to search for images of Phoca Gallery powered by Joomla! Smart Search (Finder) feature. ]]></description>
-		<element>plg_finder_phocagallery</element>
+		<element>phocagallery</element>
 		<folder>finder</folder>
 		<type>plugin</type>
 		<version>4.3.11</version>
@@ -17,6 +17,6 @@
 		<maintainerurl>https://www.phoca.cz/</maintainerurl>
 		<section>Updates</section>
 		<targetplatform name="joomla" version="3.9"/>
-		<client>1</client>
+		<client>0</client>
 	</update>
 </updates>
