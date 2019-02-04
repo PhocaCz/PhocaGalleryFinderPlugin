@@ -16,6 +16,8 @@ Phoca Gallery Finder plugin is a Joomla! plugin which allows you to search for i
 
 [Phoca Gallery Finder Plugin](https://www.phoca.cz/phoca-gallery-finder-plugin)
 
+[Phoca Gallery Info Page](https://www.phoca.cz/project/phocagallery-joomla-gallery)
+
 
 
 ## Documentation

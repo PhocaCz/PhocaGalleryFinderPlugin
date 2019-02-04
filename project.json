@@ -9,6 +9,8 @@
 	"description": "Phoca Gallery Finder plugin is a Joomla! plugin which allows you to search for images of Phoca Gallery powered by Joomla! Smart Search (Finder) feature.",
 	"projectUrl": "https://www.phoca.cz/phoca-gallery-finder-plugin",
 	"projectDocumentationUrl": "https://www.phoca.cz/documentation/category/106-phoca-gallery-finder-plugin",
+	"projectMainComponent": "Phoca Gallery",
+	"projectMainComponentInfoUrl": "https://www.phoca.cz/project/phocagallery-joomla-gallery",
 	"projectDemo" : {
 		"Joomla! 2.5 Demo": "https://www.phoca.cz/joomlademo/"
 	},
