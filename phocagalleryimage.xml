@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="plugin" group="finder" method="upgrade" version="4.0">
+	<name>plg_finder_phocagalleryimage</name>
+	<author>Jan Pavelka (www.phoca.cz)</author>
+	<creationDate>05/11/2022</creationDate>
+	<authorEmail></authorEmail>
+	<authorUrl>https://www.phoca.cz</authorUrl>
+	<copyright>Jan Pavelka</copyright>
+	<license>GNU/GPL</license>
+	<version>4.5.2</version>
+	<description>PLG_FINDER_PHOCAGALLERYIMAGE_DESCRIPTION</description>
+	<projectName>PhocaGalleryFinderPlugin</projectName>
+
+	<files>
+		<filename plugin="phocagalleryimage">index.html</filename>
+		<filename plugin="phocagalleryimage">phocagalleryimage.php</filename>
+	</files>
+
+	<languages>
+		<language tag="en-GB">language/en-GB/en-GB.plg_finder_phocagalleryimage.ini</language>
+		<language tag="en-GB">language/en-GB/en-GB.plg_finder_phocagalleryimage.sys.ini</language>
+	</languages>
+
+	<administration>
+		<languages>
+			<language tag="en-GB">language/en-GB/en-GB.plg_finder_phocagalleryimage.ini</language>
+			<language tag="en-GB">language/en-GB/en-GB.plg_finder_phocagalleryimage.sys.ini</language>
+		</languages>
+	</administration>
+	
+	<config>
+	<fields name="params">
+		<fieldset name="basic">
+		<field name="search_link" type="list" default="0" label="PLG_FINDER_PHOCAGALLERYIMAGE_SEARCH_LINK_LABEL" description="PLG_FINDER_PHOCAGALLERYIMAGE_SEARCH_LINK_DESC">
+			<option value="0">PLG_FINDER_PHOCAGALLERYIMAGE_CATEGORY_VIEW</option>
+			<option value="1">PLG_FINDER_PHOCAGALLERYIMAGE_DETAIL_VIEW</option>
+		</field>
+
+			<field name="thumbnail_size" type="list" default="medium" label="PLG_FINDER_PHOCAGALLERYIMAGE_THUMBNAIL_SIZE_LABEL" description="PLG_FINDER_PHOCAGALLERYIMAGE_THUMBNAIL_SIZE_DESC">
+			<option value="medium">PLG_FINDER_PHOCAGALLERYIMAGE_MEDIUM</option>
+			<option value="small">PLG_FINDER_PHOCAGALLERYIMAGE_SMALL</option>
+		</field>
+		</fieldset>
+	</fields>
+	</config>
+
+	<updateservers>
+		<server type="extension" name="PLG_FINDER_PHOCAGALLERYIMAGE" priority="1"><![CDATA[https://raw.githubusercontent.com/PhocaCz/PhocaGalleryFinderPlugin/master/manifest.xml]]></server>
+	</updateservers>
+</extension>

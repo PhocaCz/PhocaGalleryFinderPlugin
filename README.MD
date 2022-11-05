@@ -2,7 +2,7 @@
 
 
 
-![Phoca Gallery Finder Plugin](https://github.com/PhocaCz/PhocaGalleryFinderPlugin/blob/master/phocagallery.png?raw=true)
+![Phoca Gallery Finder Plugin](https://github.com/PhocaCz/PhocaGalleryFinderPlugin/blob/master/phocagalleryimage.png?raw=true)
 
 # Phoca Gallery Finder Plugin
 
@@ -52,9 +52,13 @@ Phoca Gallery Finder plugin is a Joomla! plugin which allows you to search for i
 
 
 
-## Version
+## Version (Joomla! 3.x)
 
 4.4.0
+
+## Version (Joomla! 4.x)
+
+4.5.2
 
 
 
