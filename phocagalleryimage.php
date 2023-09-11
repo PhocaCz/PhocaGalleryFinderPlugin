@@ -61,7 +61,7 @@ class PlgFinderPhocagalleryImage extends FinderIndexerAdapter
 		if ($context == 'com_phocagallery.phocagalleryimg' || $context == 'com_phocagallery.img' )
 		{
 			// Check if the access levels are different
-			if (!$isNew && $this->old_access != $row->access)
+			if (isset($row->access) && !$isNew && $this->old_access != $row->access)
 			{
 				// Process the change.
 				$this->itemAccessChange($row);
@@ -93,7 +93,8 @@ class PlgFinderPhocagalleryImage extends FinderIndexerAdapter
 			// Query the database for the old access level if the item isn't new
 			if (!$isNew)
 			{
-				$this->checkItemAccess($row);
+                // No access in Phoca Gallery images
+				//$this->checkItemAccess($row);
 			}
 		}
 

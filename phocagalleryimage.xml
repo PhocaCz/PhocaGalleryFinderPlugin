@@ -2,12 +2,12 @@
 <extension type="plugin" group="finder" method="upgrade" version="4.0">
 	<name>plg_finder_phocagalleryimage</name>
 	<author>Jan Pavelka (www.phoca.cz)</author>
-	<creationDate>05/11/2022</creationDate>
+	<creationDate>15/08/2023</creationDate>
 	<authorEmail></authorEmail>
 	<authorUrl>https://www.phoca.cz</authorUrl>
 	<copyright>Jan Pavelka</copyright>
 	<license>GNU/GPL</license>
-	<version>4.5.2</version>
+	<version>4.5.3</version>
 	<description>PLG_FINDER_PHOCAGALLERYIMAGE_DESCRIPTION</description>
 	<projectName>PhocaGalleryFinderPlugin</projectName>
 

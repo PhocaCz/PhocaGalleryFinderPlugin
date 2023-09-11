@@ -58,7 +58,7 @@ Phoca Gallery Finder plugin is a Joomla! plugin which allows you to search for i
 
 ## Version (Joomla! 4.x)
 
-4.5.2
+4.5.3
 
 
 
