@@ -8,16 +8,21 @@
  */
 
 use Joomla\CMS\Component\ComponentHelper;
+use Joomla\CMS\Factory;
+use Joomla\Component\Finder\Administrator\Indexer\Adapter;
+use Joomla\Component\Finder\Administrator\Indexer\Indexer;
 use Joomla\Database\DatabaseQuery;
+use Joomla\Registry\Registry;
+use Joomla\Component\Finder\Administrator\Indexer\Helper;
 
 defined('JPATH_BASE') or die;
 require_once JPATH_ADMINISTRATOR . '/components/com_finder/helpers/indexer/adapter.php';
 
-class PlgFinderPhocagalleryImage extends FinderIndexerAdapter
+class PlgFinderPhocagalleryImage extends Adapter
 {
 	protected $context 			= 'PhocagalleryImages';
 	protected $extension 		= 'com_phocagallery';
-	protected $layout 			= 'category';
+	protected $layout 			= 'detail';
 	protected $type_title 		= 'Phoca Gallery Images';
 	protected $table 			= '#__phocagallery';
 	protected $autoloadLanguage = true;
@@ -91,11 +96,10 @@ class PlgFinderPhocagalleryImage extends FinderIndexerAdapter
 		if ($context == 'com_phocagallery.phocagalleryimg' || $context == 'com_phocagallery.img' )
 		{
 			// Query the database for the old access level if the item isn't new
-			if (!$isNew)
+			/*if (!$isNew)
 			{
-                // No access in Phoca Gallery images
-				//$this->checkItemAccess($row);
-			}
+				$this->checkItemAccess($row);
+			}*/
 		}
 
 		// Check for access levels from the category
@@ -127,16 +131,16 @@ class PlgFinderPhocagalleryImage extends FinderIndexerAdapter
 	}
 
 
-	protected function index(FinderIndexerResult $item, $format = 'html')
+	protected function index(Joomla\Component\Finder\Administrator\Indexer\Result $item, $format = 'html')
 	{
 		// Check if the extension is enabled
-		if (JComponentHelper::isEnabled($this->extension) == false)
+		if (ComponentHelper::isEnabled($this->extension) == false)
 		{
 			return;
 		}
 
 
-        if (!JComponentHelper::isEnabled('com_phocagallery', true)) {
+        if (!ComponentHelper::isEnabled('com_phocagallery', true)) {
             echo '<div class="alert alert-danger">Phoca Gallery Error: Phoca Gallery component is not installed or not published on your system</div>';
             return;
         }
@@ -158,13 +162,17 @@ class PlgFinderPhocagalleryImage extends FinderIndexerAdapter
 		$item->setLanguage();
 
 		// Initialize the item parameters.
-		$registry = new JRegistry;
-		$registry->loadString($item->params);
-		$item->params = $registry;
+        if (!empty($item->params)) {
+            $registry = new Registry;
+            $registry->loadString($item->params);
+            $item->params = $registry;
+        }
 
-		$registry = new JRegistry;
-		$registry->loadString($item->metadata);
-		$item->metadata = $registry;
+        if (!empty($item->metadata)) {
+            $registry = new Registry;
+            $registry->loadString($item->metadata);
+            $item->metadata = $registry;
+        }
 
 		// Build the necessary route and path information.
 		$item->url = $this->getURL($item->id, $this->extension, $this->layout);
@@ -185,7 +193,7 @@ class PlgFinderPhocagalleryImage extends FinderIndexerAdapter
 		}
 
 		//$item->path = FinderIndexerHelper::getContentPath($item->route);
-		$item->url = $this->getURL($item->id, $this->extension, $this->layout);
+		//$item->url = $this->getURL($item->id, $this->extension, $this->layout);
 
 
         // Add the image.
@@ -205,15 +213,16 @@ class PlgFinderPhocagalleryImage extends FinderIndexerAdapter
 		 * configuration parameters.
 		 */
 		// Add the meta-author.
-		$item->metaauthor = $item->metadata->get('author');
-
+        if (!empty($item->metadata)) {
+            $item->metaauthor = $item->metadata->get('author');
+        }
 		// Handle the link to the meta-data.
-		$item->addInstruction(FinderIndexer::META_CONTEXT, 'link');
-		$item->addInstruction(FinderIndexer::META_CONTEXT, 'metakey');
-		$item->addInstruction(FinderIndexer::META_CONTEXT, 'metadesc');
-		$item->addInstruction(FinderIndexer::META_CONTEXT, 'metaauthor');
-		$item->addInstruction(FinderIndexer::META_CONTEXT, 'author');
-		$item->addInstruction(FinderIndexer::META_CONTEXT, 'created_by_alias');
+		$item->addInstruction(Indexer::META_CONTEXT, 'link');
+		$item->addInstruction(Indexer::META_CONTEXT, 'metakey');
+		$item->addInstruction(Indexer::META_CONTEXT, 'metadesc');
+		$item->addInstruction(Indexer::META_CONTEXT, 'metaauthor');
+		$item->addInstruction(Indexer::META_CONTEXT, 'author');
+		$item->addInstruction(Indexer::META_CONTEXT, 'created_by_alias');
 
 		// Add the type taxonomy data.
 		$item->addTaxonomy('Type', 'Phoca Gallery Images');
@@ -227,7 +236,7 @@ class PlgFinderPhocagalleryImage extends FinderIndexerAdapter
 		$item->addTaxonomy('Language', $item->language);
 
 		// Get content extras.
-		FinderIndexerHelper::getContentExtras($item);
+		Helper::getContentExtras($item);
 
 		// Index the item.
 		$this->indexer->index($item);
@@ -241,9 +250,9 @@ class PlgFinderPhocagalleryImage extends FinderIndexerAdapter
 
 	protected function getListQuery($query = null)
 	{
-		$db = JFactory::getDbo();
+		$db = Factory::getDbo();
 		// Check if we can use the supplied SQL query.
-		$query = $query instanceof JDatabaseQuery ? $query : $db->getQuery(true)
+		$query = $query instanceof DatabaseQuery ? $query : $db->getQuery(true)
 			->select('a.id, a.catid, a.title, a.alias, "" AS link, a.description AS summary, a.filename')
 			->select('a.metakey, a.metadesc, a.metadata, a.language, a.ordering')
 			->select('"" AS created_by_alias, "" AS modified, "" AS modified_by')

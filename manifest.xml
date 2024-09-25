@@ -31,7 +31,6 @@
 		<downloads>
 			<downloadurl type="full" format="zip">https://github.com/PhocaCz/PhocaGalleryFinderPlugin/releases/download/4.5.3/plg_finder_phocagalleryimage_v4.5.3.zip</downloadurl>
 		</downloads>
-		<sha512>6f4d1481b820f37b78f3e68ca8e6d22b6fc8b94da1910dc9d636868b5cf7f33afd6ce299913ccc14c3f579282d80539d13fdd798cb62c5787bc9bc77e883fb06</sha512>
 		<tags>
 			<tag>stable</tag>
 		</tags>
@@ -39,6 +38,27 @@
 		<maintainerurl>https://www.phoca.cz/</maintainerurl>
 		<section>Updates</section>
 		<targetplatform name="joomla" version="4\.*"/>
+		<client>site</client>
+	</update>
+	<update>
+		<name><![CDATA[ Phoca Gallery Finder Plugin ]]></name>
+		<description><![CDATA[ Phoca Gallery Finder plugin is a Joomla! plugin which allows you to search for images of Phoca Gallery powered by Joomla! Smart Search (Finder) feature. ]]></description>
+		<element>phocagalleryimage</element>
+		<folder>finder</folder>
+		<type>plugin</type>
+		<version>5.0.3</version>
+		<infourl title="Phoca Gallery Finder Plugin 5.0.3">https://www.phoca.cz/</infourl>
+		<downloads>
+			<downloadurl type="full" format="zip">https://github.com/PhocaCz/PhocaGalleryFinderPlugin/releases/download/5.0.3/plg_finder_phocagalleryimage_v5.0.3.zip</downloadurl>
+		</downloads>
+		<sha512>c5f9e468f38ec4994501d0c4ccaac30f1fa9577d207677cffc3dad76317f17ab9085762e8feea33fc474092f02f4ece18420c1cdbafdfdf9bad4ae16418e2044</sha512>
+		<tags>
+			<tag>stable</tag>
+		</tags>
+		<maintainer><![CDATA[ Phoca.cz ]]></maintainer>
+		<maintainerurl>https://www.phoca.cz/</maintainerurl>
+		<section>Updates</section>
+		<targetplatform name="joomla" version="(4|5)\.*"/>
 		<client>site</client>
 	</update>
 </updates>
