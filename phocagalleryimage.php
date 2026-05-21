@@ -16,7 +16,7 @@ use Joomla\Registry\Registry;
 use Joomla\Component\Finder\Administrator\Indexer\Helper;
 
 defined('JPATH_BASE') or die;
-require_once JPATH_ADMINISTRATOR . '/components/com_finder/helpers/indexer/adapter.php';
+//require_once JPATH_ADMINISTRATOR . '/components/com_finder/helpers/indexer/adapter.php';
 
 class PlgFinderPhocagalleryImage extends Adapter
 {
@@ -66,7 +66,7 @@ class PlgFinderPhocagalleryImage extends Adapter
 		if ($context == 'com_phocagallery.phocagalleryimg' || $context == 'com_phocagallery.img' )
 		{
 			// Check if the access levels are different
-			if (isset($row->access) && !$isNew && $this->old_access != $row->access)
+			if (!$isNew && $this->old_access != $row->access)
 			{
 				// Process the change.
 				$this->itemAccessChange($row);
@@ -93,14 +93,12 @@ class PlgFinderPhocagalleryImage extends Adapter
 	public function onFinderBeforeSave($context, $row, $isNew)
 	{
 		// We only want to handle web links here
-		if ($context == 'com_phocagallery.phocagalleryimg' || $context == 'com_phocagallery.img' )
-		{
-			// Query the database for the old access level if the item isn't new
-			/*if (!$isNew)
-			{
-				$this->checkItemAccess($row);
-			}*/
-		}
+		if ($context == 'com_phocagallery.phocagalleryimg' || $context == 'com_phocagallery.img' ) {
+            // Query the database for the old access level if the item isn't new
+            if (!$isNew) {
+                $this->checkItemAccess($row);
+            }
+        }
 
 		// Check for access levels from the category
 		if ($context == 'com_phocagallery.phocagallerycat')
@@ -256,7 +254,7 @@ class PlgFinderPhocagalleryImage extends Adapter
 			->select('a.id, a.catid, a.title, a.alias, "" AS link, a.description AS summary, a.filename')
 			->select('a.metakey, a.metadesc, a.metadata, a.language, a.ordering')
 			->select('"" AS created_by_alias, "" AS modified, "" AS modified_by')
-			//->select('"" AS publish_start_date, "" AS publish_end_date')
+			->select('"" AS publish_start_date, "" AS publish_end_date')
 			->select('a.published AS state, a.params, a.approved, 1 as access')
 			->select('c.title AS category, c.alias as categoryalias, c.published AS cat_state, c.access AS cat_access');
 
@@ -264,7 +262,8 @@ class PlgFinderPhocagalleryImage extends Adapter
 		$case_when_item_alias = ' CASE WHEN ';
 		$case_when_item_alias .= $query->charLength('a.alias', '!=', '0');
 		$case_when_item_alias .= ' THEN ';
-		$a_id = $query->castAsChar('a.id');
+		//$a_id = $query->castAsChar('a.id');
+		$a_id = $query->castAs('CHAR', 'a.id');
 		$case_when_item_alias .= $query->concatenate(array($a_id, 'a.alias'), ':');
 		$case_when_item_alias .= ' ELSE ';
 		$case_when_item_alias .= $a_id.' END as slug';
@@ -273,7 +272,8 @@ class PlgFinderPhocagalleryImage extends Adapter
 		$case_when_category_alias = ' CASE WHEN ';
 		$case_when_category_alias .= $query->charLength('c.alias', '!=', '0');
 		$case_when_category_alias .= ' THEN ';
-		$c_id = $query->castAsChar('c.id');
+		//$c_id = $query->castAsChar('c.id');
+		$c_id = $query->castAs('CHAR', 'c.id');
 		$case_when_category_alias .= $query->concatenate(array($c_id, 'c.alias'), ':');
 		$case_when_category_alias .= ' ELSE ';
 		$case_when_category_alias .= $c_id.' END as catslug';
