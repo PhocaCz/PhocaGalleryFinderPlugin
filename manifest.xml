@@ -79,7 +79,7 @@
 		<maintainer><![CDATA[ Phoca.cz ]]></maintainer>
 		<maintainerurl>https://www.phoca.cz/</maintainerurl>
 		<section>Updates</section>
-		<targetplatform name="joomla" version="(5|6)\.*"/>
+		<targetplatform name="joomla" version="6\.*"/>
 		<client>site</client>
 	</update>
 </updates>
