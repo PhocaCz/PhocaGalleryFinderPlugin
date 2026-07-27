@@ -52,7 +52,7 @@
 		<downloads>
 			<downloadurl type="full" format="zip">https://github.com/PhocaCz/PhocaGalleryFinderPlugin/releases/download/6.1.2/plg_finder_phocagalleryimage_v6.1.2.zip</downloadurl>
 		</downloads>
-		<sha512>2a09843e4ed904ab13b615a0c37f5ad4c40b1116edef7a74782967ffe3a09ff9ee669be062dbce88e49c079278ca6d11018ccd939de8727c5835f8d9bd489ee6</sha512>
+		<sha512>5195ee3eb9d4ec9de871726fdb864747349bd9b3474eb9919aa27e1e9dcf0bb44af6ce011a6a1c166e5d42ecd137c34be77471eab3b609656e370bd372abf146</sha512>
 		<tags>
 			<tag>stable</tag>
 		</tags>
