@@ -63,14 +63,12 @@ If you need additional information beyond this GitHub repository, further docume
 
 - [Joomla! 2.5 Demo](https://www.phoca.cz/joomlademo/)
 
-### Version (Joomla! 3.x - no longer supported)
-4.4.0
 ### Version (Joomla! 4.x - no longer supported)
 4.5.2
 ### Version (Joomla! 5.x - no longer supported)
 5.0.3
 ### Version (Joomla! 6.x)
-6.1.1
+6.1.2
 
 ### License
 

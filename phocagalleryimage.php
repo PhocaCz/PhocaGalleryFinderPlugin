@@ -66,11 +66,12 @@ class PlgFinderPhocagalleryImage extends Adapter
 		if ($context == 'com_phocagallery.phocagalleryimg' || $context == 'com_phocagallery.img' )
 		{
 			// Check if the access levels are different
-			if (!$isNew && $this->old_access != $row->access)
+            // No access for images, it is based on category access
+			/*if (!$isNew && $this->old_access != $row->access)
 			{
 				// Process the change.
 				$this->itemAccessChange($row);
-			}
+			}*/
 
 			// Reindex the item
 			$this->reindex($row->id);
@@ -96,7 +97,8 @@ class PlgFinderPhocagalleryImage extends Adapter
 		if ($context == 'com_phocagallery.phocagalleryimg' || $context == 'com_phocagallery.img' ) {
             // Query the database for the old access level if the item isn't new
             if (!$isNew) {
-                $this->checkItemAccess($row);
+                // Images has no access rights, they are based on category access rights
+                //$this->checkItemAccess($row);
             }
         }
 

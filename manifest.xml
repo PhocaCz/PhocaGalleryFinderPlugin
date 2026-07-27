@@ -6,26 +6,6 @@
 		<element>phocagalleryimage</element>
 		<folder>finder</folder>
 		<type>plugin</type>
-		<version>4.4.0</version>
-		<infourl title="Phoca Gallery Finder Plugin 4.4.0">https://www.phoca.cz/</infourl>
-		<downloads>
-			<downloadurl type="full" format="zip">https://github.com/PhocaCz/PhocaGalleryFinderPlugin/releases/download/4.4.0/plg_finder_phocagalleryimage_v4.4.0.zip</downloadurl>
-		</downloads>
-		<tags>
-			<tag>stable</tag>
-		</tags>
-		<maintainer><![CDATA[ Phoca.cz ]]></maintainer>
-		<maintainerurl>https://www.phoca.cz/</maintainerurl>
-		<section>Updates</section>
-		<targetplatform name="joomla" version="3.([89]|10)"/>
-		<client>site</client>
-	</update>
-	<update>
-		<name><![CDATA[ Phoca Gallery Finder Plugin ]]></name>
-		<description><![CDATA[ Phoca Gallery Finder plugin is a Joomla! plugin which allows you to search for images of Phoca Gallery powered by Joomla! Smart Search (Finder) feature. ]]></description>
-		<element>phocagalleryimage</element>
-		<folder>finder</folder>
-		<type>plugin</type>
 		<version>4.5.2</version>
 		<infourl title="Phoca Gallery Finder Plugin 4.5.2">https://www.phoca.cz/</infourl>
 		<downloads>
@@ -67,12 +47,12 @@
 		<element>phocagalleryimage</element>
 		<folder>finder</folder>
 		<type>plugin</type>
-		<version>6.1.1</version>
-		<infourl title="Phoca Gallery Finder Plugin 6.1.1">https://www.phoca.cz/</infourl>
+		<version>6.1.2</version>
+		<infourl title="Phoca Gallery Finder Plugin 6.1.2">https://www.phoca.cz/</infourl>
 		<downloads>
-			<downloadurl type="full" format="zip">https://github.com/PhocaCz/PhocaGalleryFinderPlugin/releases/download/6.1.1/plg_finder_phocagalleryimage_v6.1.1.zip</downloadurl>
+			<downloadurl type="full" format="zip">https://github.com/PhocaCz/PhocaGalleryFinderPlugin/releases/download/6.1.2/plg_finder_phocagalleryimage_v6.1.2.zip</downloadurl>
 		</downloads>
-		<sha512>f40d3e21f6c364fbb452cda5e7086988b46d07b1f58653ea5adbedc53795b6f3815f479d1b6bbfa805ee2c37cc6e2793df30e486bdc668127651af30cc0b00c9</sha512>
+		<sha512>2a09843e4ed904ab13b615a0c37f5ad4c40b1116edef7a74782967ffe3a09ff9ee669be062dbce88e49c079278ca6d11018ccd939de8727c5835f8d9bd489ee6</sha512>
 		<tags>
 			<tag>stable</tag>
 		</tags>
